@@ -1,2 +1,6 @@
+# ide filew
+*.vscode
+
+# compiled files
 *.out
 *.vcd
