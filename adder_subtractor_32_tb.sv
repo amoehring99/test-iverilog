@@ -12,6 +12,11 @@ module adder_subtractor_32_tb (
 
   // generate stimulus
   initial begin
+
+    $dumpfile("adder_subtractor_32.vcd"); //file to store value change dump (vcd)
+    $dumpvars(0,adder_subtractor_32_tb); //store everything at the current level and below
+    $display("Starting Sim"); //print nice message at start
+
     repeat (10) begin
       @(negedge CLK) ;
 
