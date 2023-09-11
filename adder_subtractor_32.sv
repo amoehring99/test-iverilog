@@ -1,5 +1,3 @@
-`begin_keywords "1800-2012"
-
 module adder_subtractor_32 (
   input logic CLK,
   input logic MODE,
@@ -12,5 +10,3 @@ module adder_subtractor_32 (
     else SUM <= A - B;
   end
 endmodule: adder_subtractor_32
-
-`end_keywords

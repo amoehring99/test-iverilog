@@ -1,7 +1,6 @@
-`begin_keywords "1800-2012"
+`timescale 1ns/1ns
 
 module top;
-  timeunit 1ns; timeprecision 1ns;
 
   logic [31:0] A, B;
   logic MODE;
@@ -17,4 +16,4 @@ module top;
   end
 endmodule: top
 
-`end_keywords
+`timescale 1ns/1ps

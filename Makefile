@@ -6,13 +6,13 @@ FPGA_FREQ = 12
 PCF = icebreaker.pcf
 
 # included modules
-ADD_SRC = module_1.sv module_2.sv
-ADD_TB = module_1_tb.sv module_2_tb.sv
+ADD_SRC = adder_subtractor_32.sv
+ADD_TB = adder_subtractor_32_tb.sv
 
-top_foo: top_foo.rpt top_foo.bin
-top_bar: top_bar.rpt top_bar.bin
+top: top.rpt top.bin
+top_tb: top_tb.rpt top_tb.bin
 
-%.json: $(ADD_SRC) $(ADD_TB)
+%.json: %.sv $(ADD_SRC)
 	yosys -ql $(basename $@)-yosys.log -p 'synth_ice40 -top $(basename $@) -json $@' $< $(ADD_SRC)
 
 %.asc: %.json ${PCF}
